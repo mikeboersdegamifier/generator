@@ -55,10 +55,10 @@ commit_levels = (
 )
 
 
-end = datetime.strptime(args.end, '%Y-%m-%d') if args.end else (
+end = datetime.datetime.strptime(args.end, '%Y-%m-%d').date() if args.end else (
     (datetime.datetime.now() + datetime.timedelta(days=100)).date()
 )
-start = datetime.strptime(args.start, '%Y-%m-%d') if args.start else (
+start = datetime.datetime.strptime(args.start, '%Y-%m-%d').date() if args.start else (
     (datetime.datetime.now() - datetime.timedelta(days=365 + 14 + 1)).date()
 )
 
